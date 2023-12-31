@@ -40,28 +40,13 @@ android {
                 load(rootProject.file("/config/local.properties").reader())
             }
 
-            // Configuration MQTT HiveMQ
-
-            // build config for HOST
+            // build config for BASE_URL
             buildConfigField(
                 "String",
-                "HOST",
-                "${properties["HOST"]}"
+                "BASE_URL",
+                "${properties["BASE_URL"]}"
             )
 
-            // build config for USERNAME
-            buildConfigField(
-                "String",
-                "USER_MQTT",
-                "${properties["USER_MQTT"]}"
-            )
-
-            // build config for PASSWORD
-            buildConfigField(
-                "String",
-                "PASSWORD_MQTT",
-                "${properties["PASSWORD_MQTT"]}"
-            )
         }
 
         getByName("debug") {
@@ -75,27 +60,11 @@ android {
                 load(rootProject.file("/config/local.properties").reader())
             }
 
-            // Configuration MQTT HiveMQ
-
-            // build config for HOST
+            // build config for BASE_URL
             buildConfigField(
                 "String",
-                "HOST",
-                "${properties["HOST"]}"
-            )
-
-            // build config for USERNAME
-            buildConfigField(
-                "String",
-                "USER_MQTT",
-                "${properties["USER_MQTT"]}"
-            )
-
-            // build config for PASSWORD
-            buildConfigField(
-                "String",
-                "PASSWORD_MQTT",
-                "${properties["PASSWORD_MQTT"]}"
+                "BASE_URL",
+                "${properties["BASE_URL"]}"
             )
         }
 
@@ -207,11 +176,11 @@ tasks.register("copyAPKDebug", Copy::class) {
     val destDir = "$rootDir/apk"
     from(soureDir)
     into(destDir)
-    rename("app-debug.apk", "melonkuDebug.apk")
+    rename("app-debug.apk", "dapurBundaBahagiaDebug.apk")
 
     // Untuk cek apakah aplikasi ada virus atau tidak, bisa diliath dari MD5 yang sudah di generate
     doLast {
-        val filePath = File(destDir, "melonkuDebug.apk")
+        val filePath = File(destDir, "dapurBundaBahagiaDebug.apk")
         ant.withGroovyBuilder {
             "checksum"("file" to filePath.path)
         }
