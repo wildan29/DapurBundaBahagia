@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 zoomx.duration = 500L
                 zoomx.doOnEnd { screen.remove() }
 
-                val zoomy = ObjectAnimator.ofFloat(screen.view, View.SCALE_Y, 0.4f,0.0f)
+                val zoomy = ObjectAnimator.ofFloat(screen.view, View.SCALE_Y, 0.4f, 0.0f)
                 zoomy.interpolator = OvershootInterpolator()
                 zoomy.duration = 500L
                 zoomy.doOnEnd { screen.remove() }
