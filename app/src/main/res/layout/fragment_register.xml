@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".app.ui.fragment.LoginFragment"
+    tools:context=".app.ui.fragment.RegisterFragment"
     android:fitsSystemWindows="false">
 
     <!--Image Header-->
@@ -23,7 +23,7 @@
             android:contentDescription="@string/header_login_page"
             android:foreground="#88000000"
             android:scaleType="centerCrop"
-            android:src="@drawable/_f694a0e4d323"
+            android:src="@drawable/_e79ac7be84d3"
             tools:ignore="UnusedAttribute"
             tools:targetApi="m" />
 
@@ -41,7 +41,7 @@
             android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/go_ahead_and_set_up_nyour_account"
+            android:text="@string/go_ahead_and_register_your_account"
             android:textAppearance="@style/TextAppearance.MyApp.Title.Large.Medium"
             android:textColor="@color/ic_launcher_background"
             app:layout_constraintBottom_toTopOf="@id/header1"
@@ -52,7 +52,7 @@
             android:id="@+id/header1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in_up_to_enjoy_the_best_managing_experience"
+            android:text="@string/sign_up_txt"
             android:textAppearance="@style/TextAppearance.MyApp.Label.Medium.Light"
             android:textColor="@color/md_theme_dark_onSurfaceVariant"
             app:layout_constraintStart_toStartOf="@+id/header"
@@ -60,6 +60,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--Input Field-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -75,10 +76,35 @@
             android:id="@+id/headline_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"
+            android:text="@string/register"
             android:textAppearance="@style/TextAppearance.MyApp.Title.Large.Semibold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor = "@color/md_theme_light_shadow"
+            app:boxStrokeColor="@color/md_theme_dark_secondary"
+            android:id="@+id/til_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Masukkan nama"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@color/md_theme_light_error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headline_login"
+            app:startIconDrawable="@drawable/baseline_person_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             app:hintTextColor = "@color/md_theme_light_shadow"
@@ -92,7 +118,7 @@
             app:helperTextTextColor="@color/md_theme_light_error"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/headline_login"
+            app:layout_constraintTop_toBottomOf="@id/til_nama"
             app:startIconDrawable="@drawable/baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -131,12 +157,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginTop="40dp"
             android:backgroundTint="@color/seed"
-            android:text="Login"
+            android:text="Sign up"
             android:textAppearance="@style/TextAppearance.MyApp.Title.Medium.Semibold"
             app:cornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -145,30 +171,56 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:textColor="@color/md_theme_dark_secondary"
-            android:id="@+id/mtv_signup"
+            android:id="@+id/mtv_signin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
-            android:text="@string/sign_up"
+            android:text="Sign in"
             android:textAppearance="@style/TextAppearance.MyApp.Label.Medium.Bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialTextView2"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/materialTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/don_t_have_an_account"
+            android:text="Already have an account?"
             android:textAppearance="@style/TextAppearance.MyApp.Label.Medium"
-            app:layout_constraintEnd_toStartOf="@id/mtv_signup"
+            app:layout_constraintEnd_toStartOf="@id/mtv_signin"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/md_theme_light_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackCornerRadius="2dp"
+        tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

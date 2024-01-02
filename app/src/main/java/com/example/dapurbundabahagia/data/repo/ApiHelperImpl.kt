@@ -8,7 +8,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class ApiHelperImpl @Inject constructor(private val apiService: ApiService) : ApiHelper {
-    override suspend fun login(login: RegisterModel): Response<JsonObject> {
-        return apiService.login(login)
+    override suspend fun register(register: RegisterModel): Response<JsonObject> {
+        return apiService.register(register)
     }
 }

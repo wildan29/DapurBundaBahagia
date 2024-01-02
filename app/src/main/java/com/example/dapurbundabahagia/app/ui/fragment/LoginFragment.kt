@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.example.dapurbundabahagia.R
 import com.example.dapurbundabahagia.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,6 +44,13 @@ class LoginFragment : Fragment() {
             addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             statusBarColor = Color.TRANSPARENT
+        }
+
+        binding.apply{
+
+            mtvSignup.setOnClickListener {view ->
+                view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            }
         }
     }
 

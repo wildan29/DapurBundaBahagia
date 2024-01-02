@@ -5,8 +5,11 @@
     <string name="welcome_back">Welcome back!</string>
     <string name="header_login_page">header_login_page</string>
     <string name="go_ahead_and_set_up_nyour_account">Go ahead and set up\nYour Account</string>
-    <string name="sign_in_up_to_enjoy_the_best_managing_experience">Sign in-up to enjoy the best managing experience</string>
+    <string name="go_ahead_and_register_your_account">Go ahead and register\nYour Account</string>
+    <string name="sign_in_up_to_enjoy_the_best_managing_experience">Sign in to enjoy the best managing experience</string>
+    <string name="sign_up_txt">Sign up to enjoy the best managing experience</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
     <string name="masukkan_email">Enter Email</string>
     <string name="masukkan_password">Enter Password</string>
     <string name="don_t_have_an_account">Don\'t Have an Account ?</string>

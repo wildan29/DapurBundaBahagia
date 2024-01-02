@@ -5,5 +5,5 @@ import com.google.gson.JsonObject
 import retrofit2.Response
 
 interface ApiHelper {
-    suspend fun login(login: RegisterModel): Response<JsonObject>
+    suspend fun register(register: RegisterModel): Response<JsonObject>
 }
